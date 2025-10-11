@@ -2,7 +2,6 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, JetBrains_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Suspense } from "react"
 import "./globals.css"
 
@@ -64,7 +63,6 @@ export default function RootLayout({
         <Suspense fallback={<div>Loading...</div>}>
           {children}
           <Analytics />
-          <SpeedInsights />
         </Suspense>
       </body>
     </html>

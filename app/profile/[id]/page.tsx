@@ -6,7 +6,6 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Link from "next/link"
 import { Settings } from "lucide-react"
-import { FollowButton } from "@/components/follow-button"
 
 export default async function ProfilePage({ params }: { params: { id: string } }) {
   if (params.id === "edit") {
@@ -66,7 +65,7 @@ export default async function ProfilePage({ params }: { params: { id: string } }
         .select("*")
         .eq("follower_id", currentUser.id)
         .eq("following_id", profile.id)
-        .maybeSingle()
+        .single()
     : { data: null }
 
   const isFollowing = !!followData
@@ -113,12 +112,13 @@ export default async function ProfilePage({ params }: { params: { id: string } }
                       Edit Profile
                     </Link>
                   </Button>
-                ) : currentUser ? (
-                  <FollowButton userId={profile.id} isFollowing={isFollowing} />
                 ) : (
-                  <Button variant="default" asChild>
-                    <Link href="/auth/login">Follow</Link>
-                  </Button>
+                  <form action={`/api/follows/${isFollowing ? "unfollow" : "follow"}`} method="POST">
+                    <input type="hidden" name="user_id" value={profile.id} />
+                    <Button type="submit" variant={isFollowing ? "outline" : "default"}>
+                      {isFollowing ? "Unfollow" : "Follow"}
+                    </Button>
+                  </form>
                 )}
               </div>
             </CardContent>

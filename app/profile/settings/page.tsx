@@ -52,14 +52,15 @@ export default async function SettingsPage() {
     )
   }
 
+  // Fetch all unique categories from user's transactions
   const { data: transactions } = await supabase
     .from("transactions")
-    .select("personal_finance_category_primary")
+    .select("personal_finance_category_detailed, personal_finance_category_primary")
     .eq("user_id", user.id)
-    .not("personal_finance_category_primary", "is", null)
+    .not("personal_finance_category_detailed", "is", null)
 
   const uniqueCategories = Array.from(
-    new Set(transactions?.map((t) => t.personal_finance_category_primary).filter(Boolean)),
+    new Set(transactions?.map((t) => t.personal_finance_category_detailed).filter(Boolean)),
   ).sort()
 
   // Fetch all unique merchants from user's transactions

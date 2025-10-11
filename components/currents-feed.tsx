@@ -47,17 +47,14 @@ interface CurrentsFeedProps {
 export function CurrentsFeed({ followingDrops, globalDrops, hasFollowing }: CurrentsFeedProps) {
   const [activeTab, setActiveTab] = useState<"global" | "following">(hasFollowing ? "following" : "global")
 
-  const validFollowingDrops = followingDrops.filter((drop) => drop.transaction && drop.user)
-  const validGlobalDrops = globalDrops.filter((drop) => drop.transaction && drop.user)
-
-  const drops = activeTab === "global" ? validGlobalDrops : validFollowingDrops
+  const drops = activeTab === "global" ? globalDrops : followingDrops
 
   return (
     <div className="space-y-6">
       <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as "global" | "following")}>
         <TabsList className="grid w-full max-w-md grid-cols-2">
           <TabsTrigger value="global">Global</TabsTrigger>
-          <TabsTrigger value="following">Following {hasFollowing && `(${validFollowingDrops.length})`}</TabsTrigger>
+          <TabsTrigger value="following">Following {hasFollowing && `(${followingDrops.length})`}</TabsTrigger>
         </TabsList>
       </Tabs>
 
@@ -80,9 +77,6 @@ export function CurrentsFeed({ followingDrops, globalDrops, hasFollowing }: Curr
           {drops.map((drop) => {
             const transaction = drop.transaction
             const dropUser = drop.user
-
-            if (!transaction?.date) return null
-
             const formattedDate = format(new Date(transaction.date), "MMM d, yyyy")
             const formattedAmount = new Intl.NumberFormat("en-US", {
               style: "currency",
