@@ -4,85 +4,80 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Ocean blue and coral theme for Project October */
-  --background: oklch(0.99 0.005 240);
-  --foreground: oklch(0.15 0.02 240);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.15 0.02 240);
+  /* Editorial warm palette inspired by design brief */
+  --background: oklch(0.985 0.002 85); /* Soft warm off-white #F8F8F8 */
+  --foreground: oklch(0.25 0.01 85); /* Deep warm charcoal */
+  --card: oklch(1 0 0); /* Pure white for cards */
+  --card-foreground: oklch(0.25 0.01 85);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.15 0.02 240);
-
-  /* Ocean blue primary */
-  --primary: oklch(0.45 0.15 240);
+  --popover-foreground: oklch(0.25 0.01 85);
+  --primary: oklch(0.35 0.02 85); /* Warm dark gray */
   --primary-foreground: oklch(0.99 0 0);
-
-  /* Coral accent */
-  --accent: oklch(0.68 0.18 25);
-  --accent-foreground: oklch(0.99 0 0);
-
-  --secondary: oklch(0.96 0.01 240);
-  --secondary-foreground: oklch(0.15 0.02 240);
-  --muted: oklch(0.96 0.01 240);
-  --muted-foreground: oklch(0.45 0.02 240);
-  --destructive: oklch(0.577 0.245 27.325);
+  --secondary: oklch(0.92 0.005 85); /* Soft warm gray */
+  --secondary-foreground: oklch(0.25 0.01 85);
+  --muted: oklch(0.94 0.005 85); /* Very light warm gray */
+  --muted-foreground: oklch(0.5 0.01 85); /* Medium warm gray */
+  --accent: oklch(0.88 0.01 85); /* Subtle warm accent */
+  --accent-foreground: oklch(0.25 0.01 85);
+  --destructive: oklch(0.55 0.22 25);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.92 0.01 240);
-  --input: oklch(0.92 0.01 240);
-  --ring: oklch(0.45 0.15 240);
-  --chart-1: oklch(0.45 0.15 240);
-  --chart-2: oklch(0.68 0.18 25);
-  --chart-3: oklch(0.55 0.12 180);
-  --chart-4: oklch(0.65 0.15 300);
-  --chart-5: oklch(0.6 0.14 60);
-  --radius: 0.75rem;
-  --sidebar: oklch(0.99 0.005 240);
-  --sidebar-foreground: oklch(0.15 0.02 240);
-  --sidebar-primary: oklch(0.45 0.15 240);
+  --border: oklch(0.91 0.005 85); /* Soft warm border */
+  --input: oklch(0.91 0.005 85);
+  --ring: oklch(0.65 0.01 85);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 1rem; /* 16px for editorial feel */
+  --sidebar: oklch(0.985 0.002 85);
+  --sidebar-foreground: oklch(0.25 0.01 85);
+  --sidebar-primary: oklch(0.35 0.02 85);
   --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.96 0.01 240);
-  --sidebar-accent-foreground: oklch(0.15 0.02 240);
-  --sidebar-border: oklch(0.92 0.01 240);
-  --sidebar-ring: oklch(0.45 0.15 240);
+  --sidebar-accent: oklch(0.92 0.005 85);
+  --sidebar-accent-foreground: oklch(0.25 0.01 85);
+  --sidebar-border: oklch(0.91 0.005 85);
+  --sidebar-ring: oklch(0.65 0.01 85);
 }
 
 .dark {
-  --background: oklch(0.12 0.02 240);
-  --foreground: oklch(0.98 0.005 240);
-  --card: oklch(0.15 0.02 240);
-  --card-foreground: oklch(0.98 0.005 240);
-  --popover: oklch(0.15 0.02 240);
-  --popover-foreground: oklch(0.98 0.005 240);
-  --primary: oklch(0.55 0.18 240);
-  --primary-foreground: oklch(0.99 0 0);
-  --accent: oklch(0.68 0.18 25);
-  --accent-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.2 0.02 240);
-  --secondary-foreground: oklch(0.98 0.005 240);
-  --muted: oklch(0.2 0.02 240);
-  --muted-foreground: oklch(0.65 0.02 240);
-  --destructive: oklch(0.5 0.2 27.325);
-  --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.25 0.02 240);
-  --input: oklch(0.25 0.02 240);
-  --ring: oklch(0.55 0.18 240);
-  --chart-1: oklch(0.55 0.18 240);
-  --chart-2: oklch(0.68 0.18 25);
-  --chart-3: oklch(0.6 0.14 180);
-  --chart-4: oklch(0.7 0.16 300);
-  --chart-5: oklch(0.65 0.15 60);
-  --sidebar: oklch(0.12 0.02 240);
-  --sidebar-foreground: oklch(0.98 0.005 240);
-  --sidebar-primary: oklch(0.55 0.18 240);
-  --sidebar-primary-foreground: oklch(0.99 0 0);
-  --sidebar-accent: oklch(0.2 0.02 240);
-  --sidebar-accent-foreground: oklch(0.98 0.005 240);
-  --sidebar-border: oklch(0.25 0.02 240);
-  --sidebar-ring: oklch(0.55 0.18 240);
+  --background: oklch(0.18 0.01 85);
+  --foreground: oklch(0.96 0.002 85);
+  --card: oklch(0.22 0.01 85);
+  --card-foreground: oklch(0.96 0.002 85);
+  --popover: oklch(0.22 0.01 85);
+  --popover-foreground: oklch(0.96 0.002 85);
+  --primary: oklch(0.96 0.002 85);
+  --primary-foreground: oklch(0.25 0.01 85);
+  --secondary: oklch(0.28 0.01 85);
+  --secondary-foreground: oklch(0.96 0.002 85);
+  --muted: oklch(0.28 0.01 85);
+  --muted-foreground: oklch(0.65 0.01 85);
+  --accent: oklch(0.32 0.01 85);
+  --accent-foreground: oklch(0.96 0.002 85);
+  --destructive: oklch(0.45 0.18 25);
+  --destructive-foreground: oklch(0.96 0.002 85);
+  --border: oklch(0.28 0.01 85);
+  --input: oklch(0.28 0.01 85);
+  --ring: oklch(0.5 0.01 85);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.22 0.01 85);
+  --sidebar-foreground: oklch(0.96 0.002 85);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.96 0.002 85);
+  --sidebar-accent: oklch(0.28 0.01 85);
+  --sidebar-accent-foreground: oklch(0.96 0.002 85);
+  --sidebar-border: oklch(0.28 0.01 85);
+  --sidebar-ring: oklch(0.5 0.01 85);
 }
 
 @theme inline {
-  --font-sans: var(--font-inter);
-  --font-mono: var(--font-jetbrains-mono);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -119,6 +114,22 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* Adding masonry grid styles for react-masonry-css */
+.my-masonry-grid {
+  display: flex;
+  margin-left: -24px; /* Reverted to 24px gutter size offset */
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 24px; /* Reverted to 24px gutter size */
+  background-clip: padding-box;
+}
+
+/* Removed margin-bottom from here as it's now on the Card component itself */
+.my-masonry-grid_column > div {
 }
 
 @layer base {
